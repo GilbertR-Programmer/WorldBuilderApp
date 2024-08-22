@@ -3,6 +3,7 @@ package com.sparta.grr.worldbuilderapi.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.ProviderManager;
@@ -39,6 +40,11 @@ public class SecurityConfig {
                                     "/register/**", "/register","/authenticate",
                                     "/swagger-ui/**","/v3/api-docs/**"
                             ).permitAll();
+                            request.requestMatchers(HttpMethod.POST, "/**").hasRole("ADMIN");
+                            request.requestMatchers(HttpMethod.PUT, "/**").hasRole("ADMIN");
+                            request.requestMatchers(HttpMethod.PATCH, "/**").hasRole("ADMIN");
+                            request.requestMatchers(HttpMethod.DELETE, "/**").hasRole("ADMIN");
+                            request.requestMatchers(HttpMethod.GET, "/**").permitAll();
                             request.requestMatchers("/admin/**").hasRole("ADMIN");
                             request.requestMatchers("/user/**").hasAnyRole("USER","ADMIN");
                             request.anyRequest().authenticated();

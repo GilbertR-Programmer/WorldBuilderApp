@@ -2,6 +2,8 @@
 <project version="4">
   <component name="JpaBuddyIdeaProjectConfig">
     <option name="defaultUnitInitialized" value="true" />
+    <option name="reLastEntityCreationPackage" value="src/main/java/com/sparta/grr/worldbuilderapi" />
     <option name="renamerInitialized" value="true" />
+    <option name="reverseEngineeringLastDbConnectionId" value="8b77a6b3-fbc1-4cdb-b73e-ff269dd8bcbe__worldbuilderdb_public" />
   </component>
 </project>
